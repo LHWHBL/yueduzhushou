@@ -6,7 +6,6 @@ altair==5.3.0
 aniso8601==9.0.1
 annotated-types==0.6.0
 anyio==4.3.0
-appbuilder-sdk==0.7.1
 astroid==3.1.0
 asttokens==2.4.1
 asyncio-atexit==1.0.1
@@ -55,7 +54,7 @@ Flask==3.0.0
 Flask-Cors==4.0.0
 Flask-pymysql==0.2.4
 Flask-RESTful==0.3.10
-Flask-SQLAlchemy==3.1.1
+Flask-SQLAlchemy>=3.1,<4.0
 Flask-Vue==0.3.3
 fonttools==4.44.0
 frozenlist==1.4.1
@@ -218,7 +217,7 @@ sortedcontainers==2.4.0
 soupsieve==2.5
 spark-ai-python==0.3.24
 split==0.4
-SQLAlchemy==1.4.52
+SQLAlchemy>=1.4.50,<2.0
 stack-data==0.6.3
 statsmodels==0.14.2
 streamlit==1.33.0
