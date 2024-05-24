@@ -188,7 +188,7 @@ pytweening==1.0.7
 pytz==2023.3.post1
 PyYAML==6.0.1
 pyzmq==26.0.3
-qdrant-client>=1.10.8,<2
+qdrant-client==0.9.7
 qdrant-openapi>=1.10.5,<2
 qianfan==0.3.12
 queuelib==1.6.2
