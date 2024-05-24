@@ -24,6 +24,8 @@ from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.embeddings import SparkLLMTextEmbeddings
 from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.llms import QianfanLLMEndpoint
+from langchain_community.embeddings import QianfanEmbeddingsEndpoint
 import warnings
 warnings.filterwarnings("ignore")
 # deprecation_warning(message, category=Warning, stacklevel=2)
@@ -49,10 +51,10 @@ SPARKAI_API_SECRET = api_key['APISecret']
 SPARKAI_API_KEY = api_key['APIKey']
 API_KEY = api_key['openapi']
 # zhipu = api_key['zhipu']
-llm1 = ErnieBotChat(
+llm1 = QianfanLLMEndpoint(
     model_name='ERNIE-Bot-4',
-    ernie_client_id=ernie_client_id,
-    ernie_client_secret=ernie_client_secret,
+    qianfan_ak=ernie_client_id,
+    qianfan_sk=ernie_client_secret,
     temperature=1,
 )
 llm2 = Tongyi(temperature=1, dashscope_api_key=DASHSCOPE_API_KEY)
@@ -60,8 +62,8 @@ llm3 = SparkLLM(spark_app_id=SPARKAI_APP_ID,
         spark_api_key=SPARKAI_API_KEY,
         spark_api_secret=SPARKAI_API_SECRET,
         temperature=1)
-embedding1 = ErnieEmbeddings(ernie_client_id=ernie_client_id,
-                                  ernie_client_secret=ernie_client_secret)
+embedding1 = QianfanEmbeddingsEndpoint(qianfan_ak=ernie_client_id,
+                                  qianfan_sk=ernie_client_secret)
 embedding2 = DashScopeEmbeddings(
     model="text-embedding-v2", dashscope_api_key=DASHSCOPE_API_KEY
 )
