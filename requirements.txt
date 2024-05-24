@@ -70,7 +70,7 @@ h11==0.14.0
 h2==4.1.0
 hpack==4.0.0
 httpcore==1.0.5
-httpx==0.27.0
+httpx>=0.23.0,<1.0
 huggingface-hub==0.23.1
 hyperframe==6.0.1
 hyperlink==21.0.0
@@ -127,7 +127,7 @@ nbformat==5.10.4
 nest-asyncio==1.6.0
 networkx==3.3
 numpy==1.26.2
-openai==1.25.1
+openai>=1.25.1,<2.0.0
 openapi-schema-validator==0.6.2
 openapi-spec-validator==0.7.1
 opencv-python==4.9.0.80
@@ -188,7 +188,7 @@ pytweening==1.0.7
 pytz==2023.3.post1
 PyYAML==6.0.1
 pyzmq==26.0.3
-qdrant-client==0.9.7
+qdrant-client>=0.9.7,<1.0.0
 qdrant-openapi==1.0.0
 qianfan==0.3.12
 queuelib==1.6.2
