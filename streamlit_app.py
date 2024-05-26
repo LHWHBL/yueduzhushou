@@ -113,8 +113,7 @@ def create_embeddings(documents, embedding):
             collection_name='my_documents'
         )
         return vectorstore
-     except Exception as e:
-        print(f"Error during vector store creation: {e}")
+    except Exception as e:
         return None
 def chunk_data(data, file_name='a.txt', chunk_size=256, chunk_overlap=100):
     '''
