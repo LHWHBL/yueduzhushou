@@ -105,12 +105,18 @@ def create_embeddings(documents, embedding):
     :param embedding: 向量化模型
     :return: 向量化存储的对象
     '''
-    vectorstore = Qdrant.from_documents(
-        documents=documents,
-        embedding=embedding,
-        location=':memory:',
-        collection_name='my_documents')
+    try:
+        vectorstore = Qdrant.from_documents(
+            documents=documents,
+            embedding=embedding,
+            location=':memory:',
+            collection_name='my_documents'
+        )
+        return vectorstore
     return vectorstore
+     except Exception as e:
+        print(f"Error during vector store creation: {e}")
+        return None
 def chunk_data(data, file_name='a.txt', chunk_size=256, chunk_overlap=100):
     '''
     文档切分
@@ -176,6 +182,8 @@ def ask_and_get_answer(llm, ask, vector_store, k=3):
     :param k: 相似度前k个文档
     :return: 答案
     '''
+    if vector_store is None:
+        return "向量存储不可用，无法检索相关知识。"
     if st.session_state.vs != []: # 若添加了知识库，则根据知识库回答问题
         if k>3:
             retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={'k': k})
