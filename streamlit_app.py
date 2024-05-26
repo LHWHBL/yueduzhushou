@@ -113,7 +113,6 @@ def create_embeddings(documents, embedding):
             collection_name='my_documents'
         )
         return vectorstore
-    return vectorstore
      except Exception as e:
         print(f"Error during vector store creation: {e}")
         return None
