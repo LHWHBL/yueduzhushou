@@ -34,6 +34,7 @@ warnings.filterwarnings("ignore")
 # 读取API Key配置文件
 # with open(r"阅读小助手\api_config.json") as f:
 #     api_key = json.load(f)
+# 以下是各个大模型的API，可以根据需要进行修改和添加
 api_key = {"API Key":"cqbB6Wqoxoh6v31L77SE97gf",
 "Secret Key":"AJuOX2qe7FwOoSIjSlONr4COFpbzZ2OZ",
  "DASHSCOPE_API_KEY":"sk-8f84e7856c404659a69842fb9fafce73",
